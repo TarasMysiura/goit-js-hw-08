@@ -19,6 +19,7 @@ function onInputData(e) {
     email: refs.input.value.trim(),
     message: refs.textArea.value.trim(),
   };
+  save(LOCAL_KEY, formData);
 }
 
 function onFormSubmit(ev) {
@@ -30,7 +31,7 @@ function onFormSubmit(ev) {
   if (localStorage.getItem(LOCAL_KEY)) {
     localStorage.removeItem(LOCAL_KEY);
   }
-  save(LOCAL_KEY, formData);
+  
   ev.currentTarget.reset();
   formData = {};
 }
